@@ -1,0 +1,21 @@
+{
+  "scenarioName": "GIVEN a SOAP end point WHEN I invoke a method with a request XML, THEN I will ge the SOAP response in XML",
+  "steps": [
+    {
+      "name": "invoke_currency_conversion",
+      "url": "http://www.webservicex.com/globalweather.asmx",
+      "operation": "POST",
+      "request": {
+        "headers": {
+          "Content-Type": "text/xml; charset=utf-8",
+          "SOAPAction": "http://www.webserviceX.NET/GetCitiesByCountry" //<--- Pick it from the WSDL
+        },
+        "body": "${XML.FILE:soap_tests_requests/weather_request.xml}"
+      },
+      "assertions": {
+        "status": 200,
+        "rawBody" : "$CONTAINS.STRING:Bombay"
+      }
+    }
+  ]
+}
