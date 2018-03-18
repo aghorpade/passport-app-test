@@ -1,0 +1,25 @@
+{
+  "scenarioName": "GET GitHub Existing User Details",
+  "steps": [
+    {
+      "name": "get_user_details",
+      "url": "/users/aghorpade",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "id": 5318345,
+          "login": "aghorpade",
+          "url": "https://api.github.com/users/aghorpade",
+          "html_url": "https://github.com/aghorpade",
+          "site_admin": false,
+          "name": "Amit Ghorpade",
+          "company": "Synerzip",
+          "location": "Pune"
+        }
+      }
+    }
+  ]
+}

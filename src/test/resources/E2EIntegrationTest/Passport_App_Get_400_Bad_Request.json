@@ -1,0 +1,18 @@
+{
+  "scenarioName": "scenario_passport_get_bad_passport_id",
+  "steps": [
+    {
+      "name": "get_passport_details",
+      "url": "/passport/1xyz",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 400,
+        "body": {
+          "message" : "$CONTAINS.STRING:Passport number should be numeric"
+        }
+      }
+    }
+  ]
+}

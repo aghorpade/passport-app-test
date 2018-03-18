@@ -1,0 +1,15 @@
+{
+  "scenarioName": "scenario_passport_not_found_404",
+  "steps": [
+    {
+      "name": "get_passport_details",
+      "url": "/passport/1",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 404
+      }
+    }
+  ]
+}

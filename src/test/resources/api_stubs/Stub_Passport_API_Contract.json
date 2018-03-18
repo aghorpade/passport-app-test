@@ -1,0 +1,45 @@
+{
+  "name": "Passport Application API Contracts",
+  "apis": [
+    {
+      "name": "create_passport_application",
+      "operation": "POST",
+      "url": "/passports",
+      "ignoreBody": true,
+      "request": {
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "id": 999,
+          "userId": 12345,
+          "firstName": "John"
+        }
+      }
+    },
+    {
+      "name": "Get_Passport_Application_By_Id",
+      "operation": "GET",
+      "url": "/passports/999",
+      "response": {
+        "status": 200,
+        "body": {
+          "id": 999,
+          "userId": 12345,
+          "firstName": "John"
+        }
+      }
+    },
+    {
+      "name": "Get_Passport_Application_400_bad_request",
+      "operation": "GET",
+      "url": "/passport/1xyz",
+      "response": {
+        "status": 400,
+        "body": {
+          "message": "Badrequest. Passport number should be numeric"
+        }
+      }
+    }
+  ]
+}

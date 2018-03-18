@@ -1,0 +1,18 @@
+{
+  "scenarioName": "GET GitHub UnKnown User Details",
+  "steps": [
+    {
+      "name": "get_user_details",
+      "url": "/users/anUnKnownUser@ReallyUnknown",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 404,
+        "body": {
+          "message" : "Not Found"
+        }
+      }
+    }
+  ]
+}

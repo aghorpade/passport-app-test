@@ -1,0 +1,37 @@
+{
+  "scenarioName": "scenario_passport_get_200_success",
+  "steps": [
+    {
+      "name": "create_new_passport",
+      "url": "/passports",
+      "operation": "POST",
+      "request": {
+        "body": {
+          "userId": 12345,
+          "firstName": "John"
+        }
+      },
+      "assertions": {
+        "status": 201,
+        "body": {
+          "id": 999
+        }
+      }
+    },
+    {
+      "name": "get_passport_details",
+      "url": "/passports/${$.create_new_passport.response.body.id}",
+      "operation": "GET",
+      "request": {
+      },
+      "assertions": {
+        "status": 200,
+        "body": {
+          "id": 999,
+          "userId": 12345,
+          "firstName": "John"
+        }
+      }
+    }
+  ]
+}
